@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gotoJson.dao.GotoCourierLocMapper" >
+  <resultMap id="BaseResultMap" type="com.gotoJson.entity.GotoCourierLoc" >
+    <id column="guid" property="guid" jdbcType="CHAR" />
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="lontitude" property="lontitude" jdbcType="CHAR" />
+    <result column="latitude" property="latitude" jdbcType="CHAR" />
+    <result column="address" property="address" jdbcType="CHAR" />
+    <result column="tel" property="tel" jdbcType="CHAR" />
+    <result column="courier_id" property="courierId" jdbcType="CHAR" />
+    <result column="avatar" property="avatar" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="mac" property="mac" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    guid, id, create_date, modify_date, lontitude, latitude, address, tel, courier_id, 
+    avatar, name, mac
+  </sql>
+  
+  <select id="selectByMac" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from goto_courier_loc
+    where mac = #{mac,jdbcType=CHAR}
+  </select>
+  
+  <select id="selectAllList" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from goto_courier_loc
+  </select>
+  
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from goto_courier_loc
+    where tel = #{phone,jdbcType=CHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from goto_courier_loc
+    where guid = #{guid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from goto_courier_loc
+    where guid = #{guid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gotoJson.entity.GotoCourierLoc" >
+    insert into goto_courier_loc (guid, id, create_date, 
+      modify_date, lontitude, latitude, 
+      address, tel, courier_id, avatar, 
+      name, mac)
+    values (#{guid,jdbcType=CHAR}, #{id,jdbcType=BIGINT}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{modifyDate,jdbcType=TIMESTAMP}, #{lontitude,jdbcType=CHAR}, #{latitude,jdbcType=CHAR}, 
+      #{address,jdbcType=CHAR}, #{tel,jdbcType=CHAR}, #{courierId,jdbcType=CHAR}, #{avatar,jdbcType=CHAR}, 
+      #{name,jdbcType=CHAR}, #{mac,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gotoJson.entity.GotoCourierLoc" >
+    insert into goto_courier_loc
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="guid != null" >
+        guid,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyDate != null" >
+        modify_date,
+      </if>
+      <if test="lontitude != null" >
+        lontitude,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="courierId != null" >
+        courier_id,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="mac != null" >
+        mac,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="guid != null" >
+        #{guid,jdbcType=CHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lontitude != null" >
+        #{lontitude,jdbcType=CHAR},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=CHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=CHAR},
+      </if>
+      <if test="courierId != null" >
+        #{courierId,jdbcType=CHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="mac != null" >
+        #{mac,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gotoJson.entity.GotoCourierLoc" >
+    update goto_courier_loc
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyDate != null" >
+        modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lontitude != null" >
+        lontitude = #{lontitude,jdbcType=CHAR},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=CHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=CHAR},
+      </if>
+      <if test="courierId != null" >
+        courier_id = #{courierId,jdbcType=CHAR},
+      </if>
+      <if test="avatar != null" >
+        avatar = #{avatar,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="mac != null" >
+        mac = #{mac,jdbcType=CHAR},
+      </if>
+    </set>
+    where guid = #{guid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gotoJson.entity.GotoCourierLoc" >
+    update goto_courier_loc
+    set id = #{id,jdbcType=BIGINT},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_date = #{modifyDate,jdbcType=TIMESTAMP},
+      lontitude = #{lontitude,jdbcType=CHAR},
+      latitude = #{latitude,jdbcType=CHAR},
+      address = #{address,jdbcType=CHAR},
+      tel = #{tel,jdbcType=CHAR},
+      courier_id = #{courierId,jdbcType=CHAR},
+      avatar = #{avatar,jdbcType=CHAR},
+      name = #{name,jdbcType=CHAR},
+      mac = #{mac,jdbcType=CHAR}
+    where guid = #{guid,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources
+END
+application.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/GotoMavenJson/!svn/ver/8/gotoJsonMaven%20Maven%20Webapp/src/main/resources/application.properties
+END
+spring-mvc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/spring-mvc.xml
+END
+messages.properties
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/messages.properties
+END
+mybatis-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/mybatis-config.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/log4j.properties
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/applicationContext.xml
+END
+ehcache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/ehcache.xml
+END
+mvc-json-mapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/resources/mvc-json-mapper.xml
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/GotoMavenJson/!svn/ver/3/gotoJsonMaven%20Maven%20Webapp/src/main/java/com/gotoJson/service
+END
+GotoVersionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/GotoMavenJson/!svn/ver/6/gotoJsonMaven%20Maven%20Webapp/src/main/java/com/gotoJson/service/GotoVersionService.java
+END
+GotoCourierLocService.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/GotoMavenJson/!svn/ver/4/gotoJsonMaven%20Maven%20Webapp/src/main/java/com/gotoJson/service/GotoCourierLocService.java
+END
+CourierService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/GotoMavenJson/!svn/ver/4/gotoJsonMaven%20Maven%20Webapp/src/main/java/com/gotoJson/service/CourierService.java
+END
+GotoCourierLocHistoryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/GotoMavenJson/!svn/ver/4/gotoJsonMaven%20Maven%20Webapp/src/main/java/com/gotoJson/service/GotoCourierLocHistoryService.java
+END

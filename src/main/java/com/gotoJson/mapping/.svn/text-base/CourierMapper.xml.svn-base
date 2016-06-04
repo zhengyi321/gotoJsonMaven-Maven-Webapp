@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gotoJson.dao.CourierMapper" >
+  <resultMap id="BaseResultMap" type="com.gotoJson.entity.Courier" >
+    <id column="guid" property="guid" jdbcType="CHAR" />
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="id_card" property="idCard" jdbcType="CHAR" />
+    <result column="type" property="type" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="avatar" property="avatar" jdbcType="CHAR" />
+    <result column="cid" property="cid" jdbcType="CHAR" />
+    <result column="area_code" property="areaCode" jdbcType="CHAR" />
+    <result column="tel" property="tel" jdbcType="CHAR" />
+    <result column="mobile_mac" property="mobileMac" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    guid, id, name, sex, id_card, type, status, avatar, cid, area_code, tel, mobile_mac
+  </sql>
+  
+  <select id="selectByMac" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from courier
+    where mobile_mac = #{mac,jdbcType=CHAR}
+  </select>
+  
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from courier
+    where tel = #{phone,jdbcType=CHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from courier
+    where guid = #{guid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from courier
+    where guid = #{guid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gotoJson.entity.Courier" >
+    insert into courier (guid, id, name, sex, 
+      id_card, type, status, avatar, 
+      cid, area_code, tel, mobile_mac
+      )
+    values (#{guid,jdbcType=CHAR}, #{id,jdbcType=BIGINT}, #{name,jdbcType=CHAR}, #{sex,jdbcType=INTEGER}, 
+      #{idCard,jdbcType=CHAR}, #{type,jdbcType=BIGINT}, #{status,jdbcType=BIGINT}, #{avatar,jdbcType=CHAR}, 
+      #{cid,jdbcType=CHAR}, #{areaCode,jdbcType=CHAR}, #{tel,jdbcType=CHAR}, #{mobileMac,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gotoJson.entity.Courier" >
+    insert into courier
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="guid != null" >
+        guid,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="mobileMac != null" >
+        mobile_mac,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="guid != null" >
+        #{guid,jdbcType=CHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=CHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIGINT},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=CHAR},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=CHAR},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=CHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=CHAR},
+      </if>
+      <if test="mobileMac != null" >
+        #{mobileMac,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gotoJson.entity.Courier" >
+    update courier
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=CHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIGINT},
+      </if>
+      <if test="avatar != null" >
+        avatar = #{avatar,jdbcType=CHAR},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=CHAR},
+      </if>
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=CHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=CHAR},
+      </if>
+      <if test="mobileMac != null" >
+        mobile_mac = #{mobileMac,jdbcType=CHAR},
+      </if>
+    </set>
+    where guid = #{guid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gotoJson.entity.Courier" >
+    update courier
+    set id = #{id,jdbcType=BIGINT},
+      name = #{name,jdbcType=CHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      id_card = #{idCard,jdbcType=CHAR},
+      type = #{type,jdbcType=BIGINT},
+      status = #{status,jdbcType=BIGINT},
+      avatar = #{avatar,jdbcType=CHAR},
+      cid = #{cid,jdbcType=CHAR},
+      area_code = #{areaCode,jdbcType=CHAR},
+      tel = #{tel,jdbcType=CHAR},
+      mobile_mac = #{mobileMac,jdbcType=CHAR}
+    where guid = #{guid,jdbcType=CHAR}
+  </update>
+</mapper>
